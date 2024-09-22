@@ -1,2 +1,3 @@
 # golour
-Create basic or wildly creative RGBA images with the help of the image package.
+
+Create some interesting RGBA images with the help of the golang image package.
