@@ -29,6 +29,7 @@ func main() {
 		func(x, y uint8) uint8 { return x + y },
 		func(x, y uint8) uint8 { return (x + y) / 2 },
 		func(x, y uint8) uint8 { return x ^ y },
+		func(x, y uint8) uint8 { return (x ^ y) / 2 },
 	}
 	if _, err := os.Stat("img"); os.IsNotExist(err) {
 		err := os.Mkdir("img", 0750)
