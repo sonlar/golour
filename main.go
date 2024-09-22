@@ -30,10 +30,11 @@ func main() {
 		func(x, y uint8) uint8 { return (x + y) / 2 },
 		func(x, y uint8) uint8 { return x ^ y },
 	}
-
-	err := os.Mkdir("img", 0750)
-	if err != nil && os.IsExist(err) {
-		log.Fatal(err)
+	if _, err := os.Stat("img"); os.IsNotExist(err) {
+		err := os.Mkdir("img", 0750)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 	for index, pattern := range patterns {
 
